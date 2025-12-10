@@ -1,0 +1,85 @@
+                   +------------------+
+                   |     Walk         |
+                   |------------------|
+                   | + walk(): void   |
+                   +------------------+
+                           ^
+                           |
+     +----------------------+----------------------+
+     |                      |                      |
++-------------+     +---------------+      +----------------+
+| Walkable    |     | NoWalkable   |      | (Other Walk..) |
+|-------------|     |---------------|      |----------------|
+| + walk()    |     | + walk()      |      | + walk()       |
++-------------+     +---------------+      +----------------+
+
+
+                   +------------------+
+                   |     Talk         |
+                   |------------------|
+                   | + talk(): void   |
+                   +------------------+
+                           ^
+                           |
+         +-----------------+--------------------+
+         |                                      |
++----------------+                     +------------------+
+| Talkable       |                     | NoTalkable       |
+|----------------|                     |------------------|
+| + talk()       |                     | + talk()         |
++----------------+                     +------------------+
+
+
+                   +------------------+
+                   |      Fly         |
+                   |------------------|
+                   | + fly(): void    |
+                   +------------------+
+                           ^
+                           |
+         +-----------------+--------------------+
+         |                                      |
++----------------+                     +------------------+
+| Flyable        |                     | NoFlyable        |
+|----------------|                     |------------------|
+| + fly()        |                     | + fly()          |
++----------------+                     +------------------+
+
+
+                        +-----------------------------+
+                        |           Robot             |
+                        |-----------------------------|
+                        | - w : Walk                  |
+                        | - t : Talk                  |
+                        | - f : Fly                   |
+                        |-----------------------------|
+                        | + Robot(w, t, f)            |
+                        | + act(): void               |
+                        +-----------------------------+
+
+📘 Explanation
+Robot
+
+Has three strategy fields: Walk, Talk, Fly
+
+Uses them in act() via delegation.
+
+Strategies
+
+Three independent families:
+
+Walking strategies (Walkable, NoWalkable)
+
+Talking strategies (Talkable, NoTalkable)
+
+Flying strategies (Flyable, NoFlyable)
+
+Each strategy implements its interface.
+
+Main idea of UML
+
+Interfaces shown as abstract types
+
+Concrete strategy classes inherit from interfaces
+
+Robot depends on (HAS-A) strategies → composition

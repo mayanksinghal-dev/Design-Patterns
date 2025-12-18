@@ -1,0 +1,90 @@
+1. Creational Patterns
+
+Concerned with object creation
+
+Singleton
+Ensures a class has only one instance (e.g., config, logger).
+
+Factory Method
+Creates objects without specifying the exact class (e.g., UI components per OS).
+
+Abstract Factory
+Factory of factories; creates related objects consistently (e.g., UI themes).
+
+Builder
+Constructs complex objects step by step (e.g., HTTP requests, DTOs).
+
+Prototype
+Creates objects by cloning existing ones (useful when creation is expensive).
+
+
+
+
+
+
+
+
+
+
+
+2. Structural Patterns
+
+Concerned with class and object composition
+
+Adapter
+Makes incompatible interfaces work together (wrapper for legacy APIs).
+
+Decorator
+Adds behavior dynamically without modifying the class (logging, caching).
+
+Facade
+Provides a simple interface over a complex subsystem.
+
+Composite
+Treats individual objects and groups uniformly (tree structures).
+
+Proxy
+Controls access to another object (lazy loading, security, remote calls).
+
+Bridge
+Separates abstraction from implementation to vary independently.
+
+
+
+
+
+
+
+
+
+
+3. Behavioral Patterns
+
+Concerned with object interaction and responsibility
+
+Observer (Publish–Subscribe)
+Notifies multiple objects of state changes (events, listeners).
+
+Strategy
+Encapsulates interchangeable algorithms (payment methods, sorting).
+
+Command
+Encapsulates a request as an object (undo/redo, queues).
+
+State
+Changes behavior when internal state changes (workflow states).
+
+Template Method
+Defines an algorithm skeleton, allowing subclasses to customize steps.
+
+Iterator
+Traverses a collection without exposing its structure.
+
+Mediator
+Centralizes communication between objects (reduces coupling).
+
+Chain of Responsibility
+Passes requests along a chain of handlers (middleware, filters).
+
+Memento
+Captures and restores object state (snapshots, undo).

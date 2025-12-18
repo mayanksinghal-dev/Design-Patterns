@@ -1,0 +1,22 @@
+                <<interface>>
+              ComputerFacade
+              ----------------
+              + start()
+                    ▲
+                    |
+              ----------------
+              |   Computer   |   <<Facade>>
+              ----------------
+              - power : Power
+              - bios  : Bios
+              - os    : OperatingSystem
+              - devices : DeviceSubsystem
+              ----------------
+              + start()
+                    |
+      -----------------------------------------
+      |           |             |             |
+  --------      --------      --------      -------------
+  | Power |      | Bios |      | OS   |      | DeviceSubsystem |
+  --------      --------      --------      -------------
+  +powerSupply() +boot()       +load()        +initialize()

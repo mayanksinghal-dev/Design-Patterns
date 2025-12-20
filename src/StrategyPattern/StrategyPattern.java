@@ -10,6 +10,11 @@
  * Then make a simple class which just accepts all those behaviours in its constructor. So you just create an object of that class and provide all your required behaviour.
  * It is basically used when there's multiple behaviours of a class and behaviours are allotted to class at runtime.
  */
+
+/**
+ * In strategy, we take assumption that class will have constant number of operations like fly, Talk, walk but there behaviours may change like fly like jet, fly like bird.
+ * If we have inconsistent number of operations, but behaviours will remain same then prefer visitor design pattern.
+ */
 package StrategyPattern;
 //All behaviours are separated out in interfaces.
 interface Walk{

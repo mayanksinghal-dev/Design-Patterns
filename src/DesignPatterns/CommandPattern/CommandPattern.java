@@ -6,7 +6,7 @@ import java.util.*;
  * Definition - Decouple the invoker from the task by introducing a command abstraction.
  * -x
  * Explanation
- * I feel maintaining the queue and using undo is just a tweak in the core architecture.
+ * I feel maintaining the stack and using undo is just a tweak in the core architecture.
  * Core arch of command pattern is it have an invoker and a task rather tightly coupling the task to invoker, we maintain a middleware i.e. command handler.
  * we call to methods of command handler like execute, undo, block/freeze or any other based on business and that command handler will
  * tightly couple to the task and have knowledge of how to execute it. that way, we can maintain n number of commands with tasks without modifying code in invoker or client,
@@ -20,6 +20,45 @@ interface Commands{
     void execute();
     void undo();
 }
+
+class LightCommand implements Commands{
+    Light l = new Light();
+    public void execute(){
+        l.on();
+    }
+    public void undo(){
+        l.off();
+    }
+}
+
+class FanCommand implements Commands{
+    Fan l = new Fan();
+    public void execute(){
+        l.start();
+    }
+    public void undo(){
+        l.stop();
+    }
+}
+
+class Light{
+    public void on(){
+        System.out.println("Light on");
+    }
+    public void off(){
+        System.out.println("Light off");
+    }
+}
+
+class Fan{
+    public void start(){
+        System.out.println("Light on");
+    }
+    public void stop(){
+        System.out.println("Light off");
+    }
+}
+
 class Invoker{
     Map<String,Commands> commands = new HashMap<>();
     Stack<Commands> st = new Stack<>();
@@ -46,44 +85,6 @@ class Invoker{
         else {
             commands.put(key, c);
         }
-    }
-}
-
-class LightCommand implements Commands{
-    Light l = new Light();
-    public void execute(){
-        l.on();
-    }
-    public void undo(){
-        l.off();
-    }
-}
-
-class Light{
-    public void on(){
-        System.out.println("Light on");
-    }
-    public void off(){
-        System.out.println("Light off");
-    }
-}
-
-class FanCommand implements Commands{
-    Fan l = new Fan();
-    public void execute(){
-        l.on();
-    }
-    public void undo(){
-        l.off();
-    }
-}
-
-class Fan{
-    public void on(){
-        System.out.println("Light on");
-    }
-    public void off(){
-        System.out.println("Light off");
     }
 }
 

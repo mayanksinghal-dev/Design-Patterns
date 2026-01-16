@@ -1,11 +1,14 @@
 package DesignPatterns.BridgePattern;
 
 /**
- * Bridge pattern decouples an abstraction(High level part) to its implementation (Low level part), so that both can vary independently.
+ * Bridge pattern decouples an abstraction(High level part) to its implementation (Low level part), so that both can vary
+ independently.
  * Abstraction - High level part ( car)
  * Implementation - Low level part (engine)
- * -x-
- * Both are abstract class only, the only difference lies in developers perspective. 1 can be high level,which may contains different low level parts.
+
+ * Both are abstract class only, the only difference lies in developers perspective. 1 can be high level,which may contains different
+   low level parts.
+    Important - 2 or more dimension change - Connects 2 or more independent scalable components to work together.
  */
 
 abstract class Car{
